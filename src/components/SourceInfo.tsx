@@ -26,12 +26,7 @@ export default function SourceInfo() {
             {/* DIABETIK FORTE LOGO */}
             <div className="flex items-center text-[32px] md:text-[38px] font-[1000] italic tracking-tighter leading-none select-none uppercase">
               <span className="text-[#1A1A1A]">DIABETIK</span>
-              <div className="flex items-center justify-center mx-[1px] md:mx-[2px]">
-                <Activity
-                  strokeWidth={5}
-                  className="w-8 h-8 md:w-[45px] md:h-[45px] text-[#8B0000] transform rotate-[-8deg]"
-                />
-              </div>
+         
               <span className="text-[#8B0000]">FORTE</span>
             </div>
 
@@ -62,20 +57,6 @@ export default function SourceInfo() {
                 {item.name}
               </a>
             ))}
-          </div>
-        </div>
-
-        {/* 3. COPYRIGHT VA STATUS */}
-        <div className="mt-16 pt-8 border-t border-red-50 flex flex-col md:flex-row justify-between items-center gap-6 text-[#1A1A1A]/40 text-[9px] font-bold uppercase tracking-[2px]">
-          <p>© 2026 DIABETIK FORTE. BARCHA HUQUQLAR HIMOYALANGAN.</p>
-          <div className="flex items-center gap-6 italic">
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-              O'ZBEKISTONDA SERTIFIKATLANGAN
-            </span>
-            <span className="text-[#1A1A1A] bg-red-50 px-3 py-1 rounded-md font-black">
-              18+
-            </span>
           </div>
         </div>
       </div>

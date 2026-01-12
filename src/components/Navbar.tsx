@@ -44,12 +44,7 @@ export default function Navbar() {
                 <span className="text-lg md:text-[22px] font-[1000] italic tracking-tighter text-[#1A1A1A]">
                   DIABETIK
                 </span>
-                <div className="flex items-center justify-center mx-[1px] md:mx-[2px]">
-                  <Activity
-                    strokeWidth={5}
-                    className="w-5 h-5 md:w-[32px] md:h-[30px] text-[#8B0000] transform rotate-[-5deg]"
-                  />
-                </div>
+             
                 <span className="text-lg md:text-[22px] font-[1000] italic tracking-tighter text-[#8B0000]">
                   FORTE
                 </span>

@@ -23,12 +23,7 @@ export default function Intro() {
                 <span className="text-2xl md:text-[38px] font-[1000] italic tracking-tighter text-[#1A1A1A] leading-none">
                   DIABETIK
                 </span>
-                <div className="flex items-center justify-center mx-[1px] md:mx-[3px]">
-                  <Activity
-                    strokeWidth={4}
-                    className="w-6 h-6 md:w-[42px] md:h-[42px] text-[#8B0000] transform rotate-[-8deg]"
-                  />
-                </div>
+           
                 <span className="text-2xl md:text-[38px] font-[1000] italic tracking-tighter text-[#8B0000] leading-none">
                   FORTE
                 </span>

@@ -10,12 +10,7 @@ export default function MainFooter() {
           <div className="flex flex-col items-start md:items-start gap-3 group cursor-pointer">
             <div className="flex items-center text-[28px] md:text-[34px] font-[1000] italic tracking-tighter select-none leading-none uppercase">
               <span className="text-white">DIABETIK</span>
-              <div className="flex items-center justify-center mx-[1px] md:mx-[2px]">
-                <Activity
-                  strokeWidth={4}
-                  className="w-8 h-8 md:w-[42px] md:h-[42px] text-[#8B0000] transform rotate-[-8deg] translate-y-[-1px]"
-                />
-              </div>
+          
               <span className="text-[#8B0000]">FORTE</span>
             </div>
             <div className="text-center md:text-left">
@@ -39,9 +34,7 @@ export default function MainFooter() {
                   </a>
                 </p>
               </div>
-              <p className="text-white/20 text-[9px] uppercase tracking-[2px] font-black">
-                Dushanba - Yakshanba: 09:00 - 21:00
-              </p>
+            
             </div>
           </div>
 

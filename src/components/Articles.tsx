@@ -41,12 +41,7 @@ export default function Articles() {
           <h2 className="flex flex-col md:flex-row md:items-center text-[32px] md:text-[42px] font-[1000] leading-none tracking-tighter mb-4">
             <div className="flex items-center select-none justify-center md:justify-start uppercase">
               <span className="italic text-[#1A1A1A]">DIABETIK</span>
-              <div className="flex items-center justify-center mx-[1px] md:mx-[2px]">
-                <Activity
-                  strokeWidth={4}
-                  className="w-8 h-8 md:w-[50px] md:h-[50px] text-[#8B0000] transform rotate-[-8deg] translate-y-[-1px] md:translate-y-[-2px]"
-                />
-              </div>
+         
               <span className="italic text-[#8B0000]">FORTE</span>
             </div>
 
@@ -68,7 +63,7 @@ export default function Articles() {
           {articles.map((article, idx) => (
             <div
               key={idx}
-              className="group relative flex flex-col h-[480px] bg-white rounded-[40px] overflow-hidden shadow-[0_10px_35px_rgba(139,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(139,0,0,0.1)] transition-all duration-700 border border-red-50"
+              className="group relative flex flex-col h-[400px] bg-white rounded-[40px] overflow-hidden shadow-[0_10px_35px_rgba(139,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(139,0,0,0.1)] transition-all duration-700 border border-red-50"
             >
               {/* Rasm qismi (42%) */}
               <div className="relative h-[42%] w-full overflow-hidden">

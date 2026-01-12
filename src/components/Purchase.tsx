@@ -96,22 +96,11 @@ export default function Purchase() {
         </div>
 
         {/* LOGO QISMI: DIABETIK FORTE */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          className="flex flex-col items-center text-center space-y-6 mb-16"
-        >
+        <motion.div className="flex flex-col items-center text-center space-y-6 mb-16">
           <div className="flex items-center select-none uppercase">
             <span className="text-4xl md:text-[75px] font-[1000] italic tracking-tighter text-[#1A1A1A] leading-none">
               DIABETIK
             </span>
-
-            <div className="flex items-center justify-center mx-[1px] md:mx-[3px]">
-              <Activity
-                strokeWidth={5}
-                className="w-10 h-10 md:w-[85px] md:h-[85px] text-[#8B0000] transform rotate-[-8deg] translate-y-[-1px] md:translate-y-[-3px]"
-              />
-            </div>
 
             <span className="text-4xl md:text-[75px] font-[1000] italic tracking-tighter text-[#8B0000] leading-none">
               FORTE
@@ -149,17 +138,7 @@ export default function Purchase() {
           ].map((pill, i) => (
             <motion.div
               key={i}
-              animate={{
-                y: [0, -25, 0],
-                rotate: [0, 15, -15, 0],
-                scale: [1, 1.05, 1],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                delay: pill.delay,
-                ease: "easeInOut",
-              }}
+         
               className={`${pill.size} ${pill.color} rounded-full shadow-xl border border-white/30 ${pill.rotate} opacity-80`}
             />
           ))}

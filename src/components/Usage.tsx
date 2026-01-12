@@ -56,12 +56,7 @@ export default function Usage() {
             <h2 className="flex flex-col text-[28px] md:text-[38px] font-[1000] leading-none tracking-tighter">
               <div className="flex items-center select-none uppercase">
                 <span className="italic text-[#1A1A1A]">DIABETIK</span>
-                <div className="flex items-center justify-center mx-[1px] md:mx-[3px]">
-                  <Activity
-                    strokeWidth={4}
-                    className="w-7 h-7 md:w-[45px] md:h-[45px] text-[#8B0000] transform rotate-[-8deg]"
-                  />
-                </div>
+          
                 <span className="italic text-[#8B0000]">FORTE</span>
               </div>
               <span className="text-[#1A1A1A] font-black text-[20px] md:text-[28px] mt-2 uppercase">

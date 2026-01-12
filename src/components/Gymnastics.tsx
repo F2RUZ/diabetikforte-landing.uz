@@ -35,12 +35,7 @@ export default function Gymnastics() {
               <span className="text-[#1A1A1A] italic leading-none">
                 DIABETIK
               </span>
-              <div className="flex items-center justify-center mx-[1px] md:mx-[2px]">
-                <Activity
-                  strokeWidth={4}
-                  className="w-7 h-7 md:w-[45px] md:h-[45px] text-[#8B0000] transform rotate-[-8deg] translate-y-[-1px] md:translate-y-[-2px]"
-                />
-              </div>
+
               <span className="text-[#8B0000] italic leading-none">FORTE</span>
             </div>
 
