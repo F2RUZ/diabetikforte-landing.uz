@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
-    hours: 4,
+    hours: 1,
     minutes: 0,
     seconds: 0,
   });

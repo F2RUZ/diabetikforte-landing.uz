@@ -14,21 +14,21 @@ export default function Articles() {
       title: "Shakarni tabiiy nazorat qilish",
       description:
         "Glyukoza darajasini me'yorda saqlash uchun to'g'ri oziqlanish va o'simlik ekstraktlarining ahamiyati haqida.",
-      imgSrc: "/health-1.png",
+      imgSrc: "/nazorat.png",
       category: "Salomatlik",
     },
     {
       title: "Metabolizmni tiklash siri",
       description:
         "Surunkali charchoq va modda almashinuvining buzilishi — organizmdagi muhim minerallar yetishmasligi belgisi.",
-      imgSrc: "/energy-2.png",
+      imgSrc: "/meto.png",
       category: "Metabolizm",
     },
     {
       title: "Diabetik Forte formulasi",
       description:
         "Nega aynan tabiiy tarkib? Majmuaning boshqa sintetik vositalardan asosiy farqlari va afzalliklari.",
-      imgSrc: "/product-box.png",
+      imgSrc: "/form.png",
       category: "Ilmiy asos",
     },
   ];

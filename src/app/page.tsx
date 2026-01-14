@@ -10,6 +10,7 @@ import Gymnastics from "@/components/Gymnastics";
 import Articles from "@/components/Articles";
 import SourceInfo from "@/components/SourceInfo";
 import Warning from "@/components/Warning";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Purchase />
       <Gymnastics />
       <Articles />
+      <FAQ/>
       <SourceInfo />
       <Warning />
       <Footer />

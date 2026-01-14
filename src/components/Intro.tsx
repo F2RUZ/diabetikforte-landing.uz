@@ -74,7 +74,7 @@ export default function Intro() {
             <div className="relative w-full h-[320px] md:h-[450px]">
               <div className="w-full h-full bg-red-50/50 rounded-[35px] overflow-hidden relative border border-red-100 shadow-inner">
                 <Image
-                  src="/hero-bg-diabetic.jpg"
+                  src="/intro.png"
                   alt="Diabetik Forte Health"
                   fill
                   className="object-cover"
@@ -83,10 +83,10 @@ export default function Intro() {
               </div>
 
               {/* Mahsulot qutisi */}
-              <div className="absolute -bottom-4 -left-2 md:-left-8 z-20 w-[180px] md:w-[280px] drop-shadow-[0_20px_40px_rgba(139,0,0,0.25)] transition-transform hover:scale-105 duration-500">
+              <div className="absolute -bottom-4 -left-2 md:-left-34 z-20 w-[180px] md:w-[280px] drop-shadow-[0_20px_40px_rgba(139,0,0,0.25)] transition-transform hover:scale-105 duration-500">
                 <div className="relative aspect-[1/1] rounded-[25px] border-[4px] border-white overflow-hidden shadow-2xl bg-white">
                   <Image
-                    src="/product-box.png"
+                    src="/intro.png"
                     alt="Diabetik Forte Box"
                     fill
                     className="object-contain p-3"

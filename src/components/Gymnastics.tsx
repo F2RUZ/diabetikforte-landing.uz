@@ -7,19 +7,19 @@ export default function Gymnastics() {
     {
       title: "NAZORAT",
       subtitle: "SHAKAR MIQDORI",
-      imgSrc: "/control-card.png",
+      imgSrc: "/nazorat.png",
       color: "from-red-50 to-red-100",
     },
     {
       title: "TIKLANISH",
       subtitle: "MODDA ALMASHINUVI",
-      imgSrc: "/metabolism-card.png",
+      imgSrc: "/tiklanish.png",
       color: "from-slate-50 to-slate-100",
     },
     {
       title: "HIMOYA",
       subtitle: "TABIIY KOMPONENT",
-      imgSrc: "/safety-card.png",
+      imgSrc: "/ximoya.png",
       color: "from-red-100 to-red-200",
     },
   ];

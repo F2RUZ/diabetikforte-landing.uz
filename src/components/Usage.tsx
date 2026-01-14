@@ -108,7 +108,7 @@ export default function Usage() {
         <div className="w-full md:w-1/2 relative">
           <div className="relative h-[400px] md:h-[580px] w-full rounded-[40px] overflow-hidden shadow-2xl border-[6px] border-red-50">
             <Image
-              src="/usage-image.jpg"
+              src="/right.png"
               alt="Diabetik Forte Lifestyle"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
@@ -116,13 +116,6 @@ export default function Usage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/70 via-transparent to-transparent" />
 
-            <div className="absolute bottom-10 left-8 right-8">
-              <p className="text-white font-[1000] italic text-xl md:text-2xl leading-tight uppercase tracking-tighter">
-                SALOMATLIK <br />{" "}
-                <span className="text-[#8B0000]">NAZORATINGIZ</span> <br />{" "}
-                OSTIDA
-              </p>
-            </div>
           </div>
 
           {/* Floating Badge (Kapsula miqdori) */}
