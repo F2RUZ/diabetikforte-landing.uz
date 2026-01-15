@@ -1,0 +1,52 @@
+name: Deploy Diabetik Forte Landing
+
+on:
+  push:
+    branches: ["**"]
+
+permissions:
+  contents: write
+  packages: write
+  actions: read
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, Linux, X64]
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: 📂 Repo-ni ko'chirib olish
+        uses: actions/checkout@v4
+
+      - name: 🟢 Node.js o'rnatish
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 📦 Kutubxonalarni o'rnatish
+        run: |
+          rm -rf node_modules
+          npm install
+          npm install lightningcss-linux-x64-gnu || echo "Handled"
+
+      - name: 🏗️ Loyihani Build qilish
+        run: npm run build
+
+      - name: 🚀 Serverga Deploy qilish
+        run: |
+          TARGET_DIR="/home/user/Projects/Euphoria/lands/diabetik-forte-landing.uz"
+          mkdir -p $TARGET_DIR
+          
+          if [ -d "out" ]; then
+            SOURCE_DIR="out"
+          else
+            echo "❌ 'out' papkasi topilmadi!"
+            exit 1
+          fi
+          
+          echo "Deploying from $SOURCE_DIR to $TARGET_DIR..."
+          rm -rf $TARGET_DIR/*
+          cp -r $SOURCE_DIR/* $TARGET_DIR/
+          echo "✅ Diabetik Forte muvaffaqiyatli yakunlandi!"

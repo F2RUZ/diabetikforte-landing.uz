@@ -72,17 +72,7 @@ export default function FAQ() {
           ))}
         </div>
 
-        {/* Ogohlantirish (Pastda, tushunarli formatda) */}
-        <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-gray-100">
-          <ul className="space-y-2">
-            {["Biologik faol qo‘shimcha.", "Dori vositasi emas.", "Ta’sir individual bo‘ladi."].map((text, i) => (
-              <li key={i} className="flex items-center gap-2 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: primaryColor }} />
-                {text}
-              </li>
-            ))}
-          </ul>
-        </div>
+  
 
       </div>
     </section>
