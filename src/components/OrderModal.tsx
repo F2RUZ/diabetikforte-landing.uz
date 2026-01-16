@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Activity, User, Phone, X, Check } from "lucide-react";
+import { Snackbar } from "./ui/Snackbar"; // Snackbar import qilindi
 
 interface OrderModalProps {
   isOpen: boolean;
@@ -14,6 +15,10 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
   >("idle");
   const [activeField, setActiveField] = useState<"name" | "phone" | null>(null);
 
+  // Xatolik xabarlari uchun holat
+  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("Server bilan bog'lanishda xatolik!");
+
   const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/leads/`;
 
   const progress =
@@ -24,6 +29,7 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
     if (isOpen) {
       document.body.style.overflow = "hidden";
       setStatus("idle");
+      setShowError(false);
       setFormData({ name: "", phone: "" });
     } else {
       document.body.style.overflow = "auto";
@@ -48,6 +54,8 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    setShowError(false);
+    
     const cleanPhone = formData.phone.replace(/\D/g, "");
 
     try {
@@ -55,21 +63,35 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: formData.name,
-          phone: cleanPhone,
-          source: "diabetik_forte_web",
+          full_name: formData.name,
+          phone_number: `+${cleanPhone}`, // Plyus belgisi qo'shildi
+          product_name: "diabetik_forte_web",
         }),
       });
 
       if (response.ok) {
         setStatus("success");
         setTimeout(() => onClose(), 4000);
+      } else if (response.status === 429) {
+        // --- 429 LIMIT HANDLING ---
+        setStatus("error");
+        setErrorMessage("Siz allaqachon ariza qoldirgansiz. Iltimos, 1 soatdan keyin qayta urinib ko'ring.");
+        setShowError(true);
+        setTimeout(() => {
+          setStatus("idle");
+          setShowError(false);
+        }, 5000);
       } else {
         throw new Error();
       }
     } catch {
       setStatus("error");
-      setTimeout(() => setStatus("idle"), 3000);
+      setErrorMessage("Server bilan bog'lanishda xatolik!");
+      setShowError(true);
+      setTimeout(() => {
+        setStatus("idle");
+        setShowError(false);
+      }, 3000);
     }
   };
 
@@ -77,11 +99,15 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
 
   return (
     <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-[#0A0A0A]/95 backdrop-blur-md">
-      {/* Overlay click to close */}
+      <Snackbar
+        isVisible={showError}
+        message={errorMessage}
+        onClose={() => setShowError(false)}
+      />
+
       <div className="absolute inset-0" onClick={onClose} />
 
       <div className="relative w-full max-w-[440px] bg-white rounded-[40px] shadow-[0_30px_100px_rgba(139,0,0,0.2)] overflow-hidden">
-        {/* Progress Bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-red-50">
           <div
             className={`h-full transition-all duration-300 ${
@@ -106,13 +132,11 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
             </div>
           ) : (
             <div>
-              {/* LOGOTIP */}
               <div className="flex items-center justify-center mb-8 select-none uppercase italic">
                 <span className="text-2xl font-[1000] text-[#1A1A1A] tracking-tighter">
                   DIABETIK
                 </span>
-           
-                <span className="text-2xl font-[1000] text-[#8B0000] tracking-tighter">
+                <span className="text-2xl font-[1000] text-[#8B0000] tracking-tighter ml-1">
                   FORTE
                 </span>
               </div>
