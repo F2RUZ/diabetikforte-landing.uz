@@ -48,7 +48,7 @@ export default function TopNav() {
             >
               <Zap className="w-3 h-3 text-[#2E7D32] fill-[#2E7D32]" />
               <span className="text-[10px] font-black uppercase tracking-wider border-b border-[#2E7D32]/50 group-hover:border-[#2E7D32] pb-0.5 transition-colors">
-                100% Chegirma olish
+               Chegirma olish
               </span>
               <MoveRight className="w-3 h-3 text-white group-hover:translate-x-1 transition-transform" />
             </button>
